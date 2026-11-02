@@ -1,0 +1,11 @@
+{
+  "spec": "dsh-app/1",
+  "id": "himarket",
+  "name": "能力市场",
+  "description": "浏览、试用与订阅模型、MCP、Agent 等 AI 能力",
+  "icon": "/logo.svg",
+  "entry": "/",
+  "auth": { "type": "bearer" },
+  "chat": false,
+  "tools": []
+}
