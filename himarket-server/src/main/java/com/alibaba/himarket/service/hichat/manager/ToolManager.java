@@ -155,8 +155,47 @@ public class ToolManager {
         CredentialContext ctx = credential != null ? credential : new CredentialContext();
         transportConfig.setHeaders(ctx.copyHeaders());
         transportConfig.setQueryParams(ctx.copyQueryParams());
+        if (isHigress(mcpConfig)) {
+            transportConfig.setUrl(toInternalGatewayUrl(transportConfig.getUrl()));
+        }
 
         return fetchTools(transportConfig);
+    }
+
+    /**
+     * Gateway address as seen from this server. The address configured on the gateway is the
+     * one shown in the portal and handed to clients, which may not be reachable from inside the
+     * deployment (e.g. a public IP whose port is only bound on the host). When
+     * HIMARKET_GATEWAY_INTERNAL_URL is set (e.g. http://higress:8080), tool fetching replaces the
+     * scheme, host and port of Higress MCP URLs with it; the published URLs stay unchanged.
+     */
+    private static final String GATEWAY_INTERNAL_URL =
+            System.getenv("HIMARKET_GATEWAY_INTERNAL_URL");
+
+    private static boolean isHigress(McpConfigResult mcpConfig) {
+        return mcpConfig.getMeta() != null
+                && "HIGRESS".equalsIgnoreCase(mcpConfig.getMeta().getSource());
+    }
+
+    static String toInternalGatewayUrl(String url) {
+        return toInternalGatewayUrl(url, GATEWAY_INTERNAL_URL);
+    }
+
+    static String toInternalGatewayUrl(String url, String internal) {
+        if (Strings.isBlank(internal) || Strings.isBlank(url)) {
+            return url;
+        }
+        try {
+            java.net.URI u = java.net.URI.create(url);
+            String base = internal.replaceAll("/+$", "");
+            String rest =
+                    (u.getRawPath() == null ? "" : u.getRawPath())
+                            + (u.getRawQuery() == null ? "" : "?" + u.getRawQuery());
+            return base + rest;
+        } catch (IllegalArgumentException e) {
+            log.warn("Invalid MCP URL, keep as is, url={}", url);
+            return url;
+        }
     }
 
     /**
