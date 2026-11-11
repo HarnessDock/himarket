@@ -15,6 +15,8 @@ export const ALL_TABS: TabItem[] = [
   { key: 'apis', label: 'tabs.apis', path: '/apis' },
   { key: 'skills', label: 'tabs.skills', path: '/skills' },
   { key: 'workers', label: 'tabs.workers', path: '/workers' },
+  // HarnessDock：ai-runtime 的调用记录（自己的；管理员看全部）
+  { key: 'agentRecords', label: 'tabs.agentRecords', path: '/agent-records' },
 ];
 
 export interface PortalConfigContextValue {

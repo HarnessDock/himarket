@@ -44,7 +44,9 @@
     "rehype-highlight": "^7.0.2",
     "remark-gfm": "^4.0.1",
     "swagger-ui-react": "^5.29.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "@harnessdock/ai-runtime-sdk": "file:../../../ai-runtime/packages/sdk",
+    "@harnessdock/ai-runtime-react": "file:../../../ai-runtime/packages/react"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",

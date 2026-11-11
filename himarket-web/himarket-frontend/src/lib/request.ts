@@ -27,6 +27,7 @@ const PUBLIC_PATHS = [
   '/apis',
   '/skills',
   '/workers',
+  '/agent-records',
   '/chat',
   '/coding',
   '/quest',

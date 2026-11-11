@@ -43,6 +43,8 @@ export default defineConfig({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+    // ai-runtime 的 SDK 与 React 组件经 file: 链接引入，它们自己的 node_modules 里也有 react，只用这里的一份
+    dedupe: ['react', 'react-dom'],
   },
   server: {
     allowedHosts: true,
