@@ -1,6 +1,7 @@
 /**
- * 「调用记录」页的登录（HarnessDock）：这页读的是 ai-runtime 的调用记录，不是 HiMarket 的数据，
- * 所以单独用 Casdoor 登录（应用 ai-runtime-console，PKCE 公开客户端；用户已在 Casdoor 登录过时无感跳回）。
+ * 「调用记录」页的登录（HarnessDock）：这页读的是 ai-runtime 的调用记录，不是 HiMarket 的数据。用户体系是同一套 Casdoor，两种登录都行：
+ * - 集成：门户已登录（含 dsh 里的「能力市场」，令牌由 dsh 换来）时直接带门户的令牌，ai-runtime 向 HiMarket 问是谁、到 Casdoor 查角色；
+ * - 独立：门户没登录、或门户令牌被拒时，单独用 Casdoor 登录（应用 ai-runtime-console，PKCE 公开客户端；已在 Casdoor 登录过时无感跳回）。
  * 配置不写在页面里：部署时生成 /agent-records.json（LPM-NEXT infra/k8s/himarket/deploy-portal.sh）。
  * 令牌只放在 sessionStorage，过期就重新跳一次登录。
  */
@@ -16,6 +17,7 @@ export interface RecordsConfig {
 const TOKEN = 'harnessdock.agentRecords.token'
 const VERIFIER = 'harnessdock.agentRecords.verifier'
 const STATE = 'harnessdock.agentRecords.state'
+const PORTAL_REJECTED = 'harnessdock.agentRecords.portalRejected'
 
 export async function loadConfig(): Promise<RecordsConfig | undefined> {
   const r = await fetch('/agent-records.json', { cache: 'no-store' }).catch(() => undefined)
@@ -32,6 +34,15 @@ const redirectUri = () => `${window.location.origin}/agent-records`
 function expiresAt(token: string) {
   try { return (JSON.parse(atob(token.split('.')[1]!.replace(/-/g, '+').replace(/_/g, '/'))) as { exp?: number }).exp! * 1000 } catch { return 0 }
 }
+
+/** 门户自己的登录令牌（request.ts 存在 localStorage 的 access_token）；被 ai-runtime 拒过的本标签页内不再用 */
+export function portalToken() {
+  const t = localStorage.getItem('access_token')
+  return t && sessionStorage.getItem(PORTAL_REJECTED) !== t ? t : undefined
+}
+
+/** ai-runtime 不认门户令牌（过期、门户账号对不上 Casdoor）：记下来，改走独立登录 */
+export function rejectPortalToken(token: string) { sessionStorage.setItem(PORTAL_REJECTED, token) }
 
 export function currentToken() {
   const t = sessionStorage.getItem(TOKEN)

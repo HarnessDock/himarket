@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Layout } from '../components/Layout';
 import MarkdownRender from '../components/MarkdownRender';
-import { currentToken, handleCallback, loadConfig, login, type RecordsConfig } from '../lib/agentRecordsAuth';
+import { currentToken, handleCallback, loadConfig, login, portalToken, rejectPortalToken, type RecordsConfig } from '../lib/agentRecordsAuth';
 import { formatDateTime } from '../lib/utils';
 
 const STATUS: Record<string, { color: string; label: string }> = {
@@ -17,6 +17,7 @@ const STATUS: Record<string, { color: string; label: string }> = {
 
 /**
  * HarnessDock：ai-runtime 的调用记录（2026-11-11 定：自己的调用；带 admin 角色的能看所有人的）。
+ * 登录：集成时沿用门户的登录，门户没登录时单独登 Casdoor（2026-11-12 定，见 lib/agentRecordsAuth.ts）。
  * 包括在 LPM 等应用里发起的调用，按会话列出，点开看完整的对话过程（工具调用、联网检索、结果）。
  * 记录随 ai-runtime 的保留时长删除（默认 1 天）。
  */
@@ -30,7 +31,8 @@ export default function AgentRecords() {
       const c = await loadConfig();
       setConfig(c ?? null);
       if (!c) return;
-      const t = (await handleCallback(c)) ?? currentToken();
+      // 刚从 Casdoor 登录回来 → 门户已登录（集成）→ 本标签页之前的独立登录 → 都没有才去 Casdoor 登录
+      const t = (await handleCallback(c)) ?? portalToken() ?? currentToken();
       if (t) setToken(t);
       else await login(c);
     })().catch((e: Error) => setError(e.message));
@@ -49,7 +51,16 @@ export default function AgentRecords() {
         {error && <Alert className="mb-4" message={error} showIcon type="error" />}
         {config === null && <Alert message="门户没有配置调用记录（缺 /agent-records.json）" showIcon type="warning" />}
         {config && !token && !error && <Spin />}
-        {client && <Records client={client} onExpired={() => config && login(config)} />}
+        {client && <Records client={client} onExpired={() => {
+          if (!config || !token) return;
+          // 门户令牌被拒：本标签页不再用它，改走独立登录；独立登录的令牌过期就重新登录
+          if (token === portalToken()) {
+            rejectPortalToken(token);
+            const t = currentToken();
+            if (t) { setToken(t); return; }
+          }
+          void login(config);
+        }} />}
       </div>
     </Layout>
   );
