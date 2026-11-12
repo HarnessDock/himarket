@@ -180,7 +180,11 @@ public class DeveloperServiceImpl implements DeveloperService {
                 Developer.builder()
                         .developerId(IdGenerator.genDeveloperId())
                         .portalId(contextHolder.getPortal())
-                        .username(buildExternalName(param.getProvider(), param.getDisplayName()))
+                        .username(
+                                buildExternalName(
+                                        contextHolder.getPortal(),
+                                        param.getProvider(),
+                                        param.getDisplayName()))
                         .email(param.getEmail())
                         .avatarUrl(param.getAvatarUrl())
                         // Default APPROVED
@@ -239,7 +243,14 @@ public class DeveloperServiceImpl implements DeveloperService {
                         });
     }
 
-    private String buildExternalName(String provider, String subject) {
+    /**
+     * HarnessDock: external developers keep their own name (same as the user name everywhere else on the
+     * platform); only when that name is already taken in the portal fall back to provider_name.
+     */
+    private String buildExternalName(String portalId, String provider, String subject) {
+        if (developerRepository.findByPortalIdAndUsername(portalId, subject).isEmpty()) {
+            return subject;
+        }
         return provider + "_" + subject;
     }
 
