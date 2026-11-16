@@ -4,7 +4,6 @@ import { Alert, Button, Drawer, Input, Segmented, Spin, Table, Tag, type TableCo
 import { useCallback, useEffect, useMemo, useState } from 'react';
 
 import { Layout } from '../components/Layout';
-import MarkdownRender from '../components/MarkdownRender';
 import { currentToken, handleCallback, loadConfig, login, portalToken, rejectPortalToken, type RecordsConfig } from '../lib/agentRecordsAuth';
 import { formatDateTime } from '../lib/utils';
 
@@ -153,7 +152,7 @@ function Detail({ client, sessionId, onClose }: { client: AiRuntimeClient; sessi
       {rec && (
         <>
           <p className="mb-4 text-sm text-gray-500">应用 {rec.appId} · 用户 {rec.userId} · 创建于 {formatDateTime(rec.createdAt)} · 共 {rec.runs} 轮</p>
-          <Transcript renderText={(t) => <MarkdownRender content={t} />} turns={turns} />
+          <Transcript turns={turns} />
         </>
       )}
     </Drawer>
