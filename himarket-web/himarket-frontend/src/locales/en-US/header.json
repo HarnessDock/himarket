@@ -7,8 +7,7 @@
     "models": "Models",
     "apis": "API",
     "skills": "Skills",
-    "workers": "Workers",
-    "agentRecords": "Call records"
+    "workers": "Workers"
   },
   "navigation": {
     "restApi": "REST API",

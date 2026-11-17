@@ -4,7 +4,6 @@ import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-
 import { RequireAuth } from './components/RequireAuth';
 import { usePortalConfig } from './context/usePortalConfig';
 import AgentDetail from './pages/AgentDetail';
-import AgentRecords from './pages/AgentRecords';
 import ApiDetail from './pages/ApiDetail';
 import Callback from './pages/Callback';
 import Chat from './pages/Chat';
@@ -79,7 +78,6 @@ export function Router() {
         <Route element={<SkillDetail />} path="/skills/:skillProductId" />
         <Route element={<Square activeType="WORKER" />} path="/workers" />
         <Route element={<WorkerDetail />} path="/workers/:workerProductId" />
-        <Route element={<AgentRecords />} path="/agent-records" />
         <Route element={<Chat />} path="/chat" />
         <Route element={<Navigate to="/coding" />} path="/quest" />
         <Route element={<Coding />} path="/coding" />
