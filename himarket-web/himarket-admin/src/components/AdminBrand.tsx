@@ -11,8 +11,8 @@ function HiLogo({
 }) {
   const gradientId =
     variant === 'primary' ? 'admin_brand_logo_primary_gradient' : 'admin_brand_logo_gradient';
-  const startColor = variant === 'primary' ? '#6366F1' : '#000000';
-  const endColor = variant === 'primary' ? '#818CF8' : '#444444';
+  const startColor = variant === 'primary' ? '#171717' : '#000000';
+  const endColor = variant === 'primary' ? '#404040' : '#444444';
 
   return (
     <svg
@@ -126,7 +126,7 @@ export function AdminBrandMark({
   className?: string;
   variant?: AdminBrandVariant;
 }) {
-  const wordmarkColor = variant === 'primary' ? '#6366F1' : '#18181B';
+  const wordmarkColor = variant === 'primary' ? '#171717' : '#18181B';
 
   return (
     <span className={`flex items-center gap-2.5 ${className ?? ''}`}>

@@ -43,7 +43,7 @@ export function ProductIconRenderer({
   }
 
   // Fall back to type-based icon
-  const typeIcon = DefaultIconByType({ style: { color: '#6366f1', fontSize: '22px' }, type });
+  const typeIcon = DefaultIconByType({ style: { color: '#171717', fontSize: '22px' }, type });
   if (typeIcon) return typeIcon;
 
   // Final fallback: SVG cube

@@ -1,5 +1,20 @@
 import { colors } from './src/aliyunThemeToken';
 
+// 黑白主调：上游页面里的 indigo / purple / violet 类都映射成中性灰黑，不逐个改页面
+const NEUTRAL_ACCENT = {
+  50: '#fafafa',
+  100: '#f5f5f5',
+  200: '#e5e5e5',
+  300: '#d4d4d4',
+  400: '#737373',
+  500: '#262626',
+  600: '#171717',
+  700: '#0a0a0a',
+  800: '#0a0a0a',
+  900: '#0a0a0a',
+  950: '#0a0a0a',
+};
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -17,6 +32,9 @@ export default {
       },
       colors: {
         ...colors,
+        indigo: NEUTRAL_ACCENT,
+        purple: NEUTRAL_ACCENT,
+        violet: NEUTRAL_ACCENT,
         accent: {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',

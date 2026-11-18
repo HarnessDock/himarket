@@ -20,13 +20,13 @@ function AdminConfigProvider({ children }: { children: ReactNode }) {
       theme={{
         components: {
           Button: {
-            primaryShadow: '0 2px 4px rgba(99, 102, 241, 0.3)',
+            primaryShadow: '0 2px 4px rgba(0, 0, 0, 0.12)',
           },
           Card: {
             borderRadiusLG: 12,
           },
           Table: {
-            rowHoverBg: '#EEF2FF',
+            rowHoverBg: '#F5F5F5',
           },
         },
         token: aliyunThemeToken,

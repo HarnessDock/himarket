@@ -1072,7 +1072,7 @@ export function ApiProductWorkerPackage({
           <Button
             icon={<LinkOutlined />}
             onClick={openNacosModal}
-            style={{ background: '#6B5CE7', borderColor: '#6B5CE7' }}
+            style={{ background: '#171717', borderColor: '#171717' }}
             type="primary"
           >
             {apiProduct.workerConfig?.nacosId

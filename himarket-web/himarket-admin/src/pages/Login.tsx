@@ -95,10 +95,10 @@ const Login: React.FC = () => {
       className="flex min-h-[100dvh] items-center justify-center px-6 py-10"
       style={{
         background:
-          'radial-gradient(circle at 50% -18%, rgba(99, 102, 241, 0.18) 0, rgba(99, 102, 241, 0) 38%), radial-gradient(circle at 92% 84%, rgba(199, 210, 254, 0.38) 0, rgba(199, 210, 254, 0) 28%), linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%)',
+          'radial-gradient(circle at 50% -18%, rgba(23, 23, 23, 0.18) 0, rgba(23, 23, 23, 0) 38%), radial-gradient(circle at 92% 84%, rgba(226, 226, 226, 0.38) 0, rgba(226, 226, 226, 0) 28%), linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%)',
       }}
     >
-      <section className="w-full max-w-[460px] rounded-[10px] border border-white/80 bg-white/[0.94] px-8 py-9 shadow-[0_24px_70px_-38px_rgba(79,70,229,0.45)] backdrop-blur-sm sm:px-9">
+      <section className="w-full max-w-[460px] rounded-[10px] border border-white/80 bg-white/[0.94] px-8 py-9 shadow-[0_24px_70px_-38px_rgba(23,23,23,0.45)] backdrop-blur-sm sm:px-9">
         <div className="mb-10">
           <AdminBrandMark />
         </div>
