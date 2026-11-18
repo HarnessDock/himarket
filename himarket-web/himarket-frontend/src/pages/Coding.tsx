@@ -810,7 +810,7 @@ function CodingContent() {
               <div className="mb-7 text-center">
                 <h1 className="m-0 text-[28px] font-medium leading-10 text-[#303747] antialiased">
                   {t('page.welcomePrefix')}{' '}
-                  <span className="hi-chat-brand-glow font-semibold text-[#818CF8]">HiCoding</span>
+                  <span className="hi-chat-brand-glow font-semibold text-[#404040]">HiCoding</span>
                 </h1>
                 <p className="mt-2 text-sm leading-6 text-[#737C8E]">
                   {t('page.welcomeDescription')}

@@ -68,7 +68,7 @@ const Register: React.FC = () => {
               >
                 <Input
                   autoComplete="username"
-                  className="h-11 rounded-[8px] border-[#DDE0E8] bg-white/65 px-3 shadow-none hover:border-[#CBC8EA] focus-within:border-[#8A84EE] focus-within:shadow-[0_0_0_3px_rgba(104,99,235,0.10)]"
+                  className="h-11 rounded-[8px] border-[#DDE0E8] bg-white/65 px-3 shadow-none hover:border-[#D9D9D9] focus-within:border-[#404040] focus-within:shadow-[0_0_0_3px_rgba(23,23,23,0.10)]"
                   placeholder={t('usernamePlaceholder')}
                   prefix={<UserOutlined className="mr-1 text-[#969DAB]" />}
                 />
@@ -84,7 +84,7 @@ const Register: React.FC = () => {
               >
                 <Input.Password
                   autoComplete="new-password"
-                  className="h-11 rounded-[8px] border-[#DDE0E8] bg-white/65 px-3 shadow-none hover:border-[#CBC8EA] focus-within:border-[#8A84EE] focus-within:shadow-[0_0_0_3px_rgba(104,99,235,0.10)]"
+                  className="h-11 rounded-[8px] border-[#DDE0E8] bg-white/65 px-3 shadow-none hover:border-[#D9D9D9] focus-within:border-[#404040] focus-within:shadow-[0_0_0_3px_rgba(23,23,23,0.10)]"
                   placeholder={t('passwordPlaceholder')}
                   prefix={<LockOutlined className="mr-1 text-[#969DAB]" />}
                 />
@@ -108,7 +108,7 @@ const Register: React.FC = () => {
               >
                 <Input.Password
                   autoComplete="new-password"
-                  className="h-11 rounded-[8px] border-[#DDE0E8] bg-white/65 px-3 shadow-none hover:border-[#CBC8EA] focus-within:border-[#8A84EE] focus-within:shadow-[0_0_0_3px_rgba(104,99,235,0.10)]"
+                  className="h-11 rounded-[8px] border-[#DDE0E8] bg-white/65 px-3 shadow-none hover:border-[#D9D9D9] focus-within:border-[#404040] focus-within:shadow-[0_0_0_3px_rgba(23,23,23,0.10)]"
                   placeholder={t('confirmPasswordPlaceholder')}
                   prefix={<LockOutlined className="mr-1 text-[#969DAB]" />}
                 />
@@ -116,7 +116,7 @@ const Register: React.FC = () => {
 
               <Form.Item className="!mb-0">
                 <Button
-                  className="h-11 w-full rounded-[8px] border-0 bg-[#6863EB] text-sm font-medium shadow-none hover:!bg-[#5D58DE]"
+                  className="h-11 w-full rounded-[8px] border-0 bg-[#171717] text-sm font-medium shadow-none hover:!bg-[#171717]"
                   htmlType="submit"
                   loading={loading}
                   size="large"
@@ -130,7 +130,7 @@ const Register: React.FC = () => {
             <div className="mt-5 text-center text-sm text-[#737C8E]">
               {t('hasAccount')}
               <Link
-                className="ml-1 font-medium text-[#6863E3] transition-colors hover:text-[#514BCB]"
+                className="ml-1 font-medium text-[#171717] transition-colors hover:text-[#0A0A0A]"
                 to="/login"
               >
                 {t('loginLink')}

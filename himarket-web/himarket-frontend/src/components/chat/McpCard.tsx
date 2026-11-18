@@ -86,11 +86,11 @@ function McpCard(props: McpCardProps) {
     <div
       className={`
         group relative flex h-[152px] w-full flex-col overflow-hidden rounded-xl border
-        bg-[linear-gradient(180deg,#FFFFFF_0%,#FBFCFF_100%)] p-4
-        shadow-[0_6px_20px_rgba(31,42,68,0.05)]
+        bg-[linear-gradient(180deg,#FFFFFF_0%,#FFFFFF_100%)] p-4
+        shadow-[0_6px_20px_rgba(0,0,0,0.05)]
         transition-all duration-200 ease-out
-        hover:-translate-y-0.5 hover:border-[#C6D1E3] hover:shadow-[0_14px_34px_rgba(31,42,68,0.09)]
-        border-[#DDE4EF]
+        hover:-translate-y-0.5 hover:border-[#D4D4D4] hover:shadow-[0_14px_34px_rgba(0,0,0,0.09)]
+        border-[#E5E5E5]
       `}
     >
       <div className="mb-3 flex items-start justify-between gap-3">

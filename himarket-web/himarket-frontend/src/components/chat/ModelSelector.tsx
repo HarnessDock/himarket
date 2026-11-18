@@ -97,7 +97,7 @@ export function ModelSelector({
   };
 
   const dropdownContent = (
-    <div className="w-[min(352px,calc(100vw-32px))] overflow-hidden rounded-[10px] border border-[#D9E0E9] bg-white shadow-[0_16px_38px_rgba(31,42,68,0.14)]">
+    <div className="w-[min(352px,calc(100vw-32px))] overflow-hidden rounded-[10px] border border-[#D9E0E9] bg-white shadow-[0_16px_38px_rgba(0,0,0,0.14)]">
       <div className="border-b border-[#EDF0F4] p-2.5">
         <div className="mb-2 px-0.5">
           <span className="text-sm font-semibold text-gray-900">{t('modelSelector.title')}</span>

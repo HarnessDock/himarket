@@ -47,8 +47,8 @@ export function WorkerCard({
         w-full text-left
         ${
           isMarketAppearance
-            ? 'rounded-[10px] border-[#E1E3EB] bg-[#FCFCFE] shadow-none hover:border-[#CDD0DC] hover:bg-white'
-            : 'rounded-xl border-[#DDE4EF] bg-[linear-gradient(180deg,#FFFFFF_0%,#FBFCFF_100%)] shadow-[0_6px_20px_rgba(31,42,68,0.05)] hover:-translate-y-0.5 hover:border-[#C6D1E3] hover:shadow-[0_14px_34px_rgba(31,42,68,0.09)]'
+            ? 'rounded-[10px] border-[#E1E3EB] bg-[#FDFDFD] shadow-none hover:border-[#CDD0DC] hover:bg-white'
+            : 'rounded-xl border-[#E5E5E5] bg-[linear-gradient(180deg,#FFFFFF_0%,#FFFFFF_100%)] shadow-[0_6px_20px_rgba(0,0,0,0.05)] hover:-translate-y-0.5 hover:border-[#D4D4D4] hover:shadow-[0_14px_34px_rgba(0,0,0,0.09)]'
         }
       `}
       onClick={onClick}
@@ -58,7 +58,7 @@ export function WorkerCard({
         <div className="flex min-w-0 flex-1 items-center gap-3">
           <div
             className={`flex h-11 w-11 flex-shrink-0 items-center justify-center overflow-hidden rounded-[10px] ${
-              isMarketAppearance ? 'bg-[#F1F0F8]' : 'border border-[#EDF1F7] bg-[#F3F6FF]'
+              isMarketAppearance ? 'bg-[#F4F4F4]' : 'border border-[#EDF1F7] bg-[#F3F6FF]'
             }`}
           >
             <ProductIconRenderer className="h-full w-full object-cover" iconType={icon} />
@@ -97,7 +97,7 @@ export function WorkerCard({
         {normalizedWorkerTags.slice(0, 3).map((tag) => (
           <span
             className={`inline-flex min-h-6 items-center rounded-[6px] px-2 text-xs font-semibold text-[#566176] ${
-              isMarketAppearance ? 'bg-[#F1F0F8]' : 'border border-[#E4EAF3] bg-[#F8FAFD]'
+              isMarketAppearance ? 'bg-[#F4F4F4]' : 'border border-[#E4EAF3] bg-[#F8FAFD]'
             }`}
             key={tag}
           >
@@ -107,7 +107,7 @@ export function WorkerCard({
         {normalizedWorkerTags.length > 3 && (
           <span
             className={`inline-flex min-h-6 items-center rounded-[6px] px-2 text-xs font-semibold text-[#566176] ${
-              isMarketAppearance ? 'bg-[#F1F0F8]' : 'border border-[#E4EAF3] bg-[#F8FAFD]'
+              isMarketAppearance ? 'bg-[#F4F4F4]' : 'border border-[#E4EAF3] bg-[#F8FAFD]'
             }`}
           >
             +{normalizedWorkerTags.length - 3}

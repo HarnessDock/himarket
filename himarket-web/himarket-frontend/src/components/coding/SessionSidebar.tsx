@@ -460,7 +460,7 @@ export function SessionSidebar({
       >
         <div className="p-4">
           <button
-            className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-transparent bg-[#F5F6FA] transition-colors hover:bg-[#F0F2F7]"
+            className="flex h-10 w-10 items-center justify-center rounded-[10px] border border-transparent bg-[#F8F8F8] transition-colors hover:bg-[#F0F2F7]"
             onClick={onNewSession}
             title={t('sidebar.newSession')}
             type="button"
@@ -490,7 +490,7 @@ export function SessionSidebar({
     >
       <div className="p-4">
         <button
-          className="group flex h-10 w-full items-center justify-between overflow-hidden text-nowrap rounded-[10px] border border-transparent bg-[#F5F6FA] px-3 transition-colors duration-200 ease-in-out hover:bg-[#F0F2F7]"
+          className="group flex h-10 w-full items-center justify-between overflow-hidden text-nowrap rounded-[10px] border border-transparent bg-[#F8F8F8] px-3 transition-colors duration-200 ease-in-out hover:bg-[#F0F2F7]"
           onClick={onNewSession}
           type="button"
         >

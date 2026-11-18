@@ -4,7 +4,7 @@
 }
 
 .consumer-management-table .ant-table-thead > tr > th {
-  background: rgba(247, 247, 251, 0.82) !important;
+  background: rgba(249, 249, 249, 0.82) !important;
   border-bottom-color: #e1e3eb !important;
   color: #596275 !important;
   font-size: 13px;
@@ -20,7 +20,7 @@
 }
 
 .consumer-management-table .ant-table-tbody > tr:hover > td {
-  background: rgba(250, 250, 253, 0.9) !important;
+  background: rgba(252, 252, 252, 0.9) !important;
   backdrop-filter: none;
 }
 

@@ -563,10 +563,10 @@ export function ModelSelector({ config, onConfigChange }: ModelSelectorProps) {
     >
       <button
         className="inline-flex cursor-pointer items-center gap-1.5 rounded-[8px]
-                   bg-[#F1F0F8]/80 px-2.5 py-1.5 text-[13px] text-[#596273]
-                   transition-colors hover:bg-[#EAE8F5]"
+                   bg-[#F4F4F4]/80 px-2.5 py-1.5 text-[13px] text-[#596273]
+                   transition-colors hover:bg-[#EEEEEE]"
       >
-        <Sparkles className="flex-shrink-0 text-[#817BE8]" size={13} />
+        <Sparkles className="flex-shrink-0 text-[#404040]" size={13} />
         <span className="font-medium text-[#4B5464]">
           {config.modelName || t('config.selectModel')}
         </span>

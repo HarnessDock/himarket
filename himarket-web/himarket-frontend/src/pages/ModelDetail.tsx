@@ -556,7 +556,7 @@ function ModelDetail() {
               className="flex min-w-0 items-center gap-2 text-xs font-medium text-gray-600"
               key={feature}
             >
-              <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-colorPrimaryBg text-colorPrimary shadow-[0_0_0_3px_rgba(99,102,241,0.08)]">
+              <span className="flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-colorPrimaryBg text-colorPrimary shadow-[0_0_0_3px_rgba(23,23,23,0.08)]">
                 <CheckCircleFilled className="text-[9px]" />
               </span>
               <span className="min-w-0 truncate">{feature}</span>
@@ -566,7 +566,7 @@ function ModelDetail() {
       </div>
       <Button
         block
-        className="mt-4 !h-10 !rounded-[10px] !border-none !bg-colorPrimary !font-semibold shadow-[0_10px_22px_rgba(99,102,241,0.22)]"
+        className="mt-4 !h-10 !rounded-[10px] !border-none !bg-colorPrimary !font-semibold shadow-[0_10px_22px_rgba(23,23,23,0.22)]"
         onClick={() => {
           if (!isLoggedIn) {
             setLoginPromptOpen(true);

@@ -134,7 +134,7 @@ function ProductDescription({
       {isCollapsible && canExpand && (
         <button
           aria-expanded={expanded}
-          className="mt-1.5 text-xs font-medium text-[#6267E9] transition-colors hover:text-[#4F55D8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-colorPrimary/20"
+          className="mt-1.5 text-xs font-medium text-[#171717] transition-colors hover:text-[#0A0A0A] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-colorPrimary/20"
           onClick={() => setExpanded((value) => !value)}
           type="button"
         >

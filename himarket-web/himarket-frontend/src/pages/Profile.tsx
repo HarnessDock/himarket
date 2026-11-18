@@ -170,7 +170,7 @@ const Profile: React.FC = () => {
           <div className="mb-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <h1 className="m-0 text-[24px] font-semibold leading-8 text-[#303747]">{t('title')}</h1>
             <Button
-              className="h-9 w-fit rounded-[8px] border-0 bg-[#EFEDFB] px-3.5 text-sm font-medium text-[#625DE2] shadow-none hover:!bg-[#E8E5F8] hover:!text-[#514BCB]"
+              className="h-9 w-fit rounded-[8px] border-0 bg-[#F4F4F4] px-3.5 text-sm font-medium text-[#171717] shadow-none hover:!bg-[#EEEEEE] hover:!text-[#0A0A0A]"
               icon={<TeamOutlined />}
               onClick={() => navigate('/consumers')}
             >
@@ -221,7 +221,7 @@ const Profile: React.FC = () => {
                       <button
                         className={`flex w-full items-center gap-3 rounded-[8px] px-3 py-2.5 text-left text-sm font-medium transition-colors ${
                           isActive
-                            ? 'bg-[#EFEDFB] text-[#4D5262]'
+                            ? 'bg-[#F4F4F4] text-[#4D5262]'
                             : 'text-[#646D7E] hover:bg-white/65 hover:text-[#404858]'
                         }`}
                         key={item.key}
@@ -229,7 +229,7 @@ const Profile: React.FC = () => {
                         type="button"
                       >
                         <span
-                          className={`text-base ${isActive ? 'text-[#625DE2]' : 'text-[#7D8594]'}`}
+                          className={`text-base ${isActive ? 'text-[#171717]' : 'text-[#7D8594]'}`}
                         >
                           {item.icon}
                         </span>

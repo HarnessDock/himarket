@@ -557,7 +557,7 @@ function WorkerDetail() {
                 <div className="flex flex-wrap gap-2">
                   {workerTags.map((tag) => (
                     <span
-                      className="inline-flex min-h-6 items-center rounded-[6px] bg-[#F1F0F8] px-2 text-xs font-semibold text-[#566176]"
+                      className="inline-flex min-h-6 items-center rounded-[6px] bg-[#F4F4F4] px-2 text-xs font-semibold text-[#566176]"
                       key={tag}
                     >
                       {tag}

@@ -59,7 +59,7 @@ function ProductMarketSkeleton({
           className={`h-[176px] animate-pulse p-4 ${
             isMarketAppearance
               ? 'rounded-[10px] border border-[#E4E8EF] bg-[#FCFCFD]'
-              : 'rounded-xl border border-[#DDE4EF] bg-white shadow-[0_6px_20px_rgba(31,42,68,0.04)]'
+              : 'rounded-xl border border-[#E5E5E5] bg-white shadow-[0_6px_20px_rgba(0,0,0,0.04)]'
           }`}
           key={index}
         >
@@ -164,7 +164,7 @@ export function ProductMarketLayout({
             className={`w-full rounded-xl p-3 md:absolute md:inset-0 md:flex md:min-h-0 md:flex-col md:overflow-hidden ${
               isMarketAppearance
                 ? 'border border-[#E1E3EB] bg-white/[0.58]'
-                : 'border border-[#DDE4EF] bg-white/75 shadow-[0_6px_20px_rgba(31,42,68,0.04)] backdrop-blur-sm'
+                : 'border border-[#E5E5E5] bg-white/75 shadow-[0_6px_20px_rgba(0,0,0,0.04)] backdrop-blur-sm'
             }`}
           >
             <span
@@ -190,10 +190,10 @@ export function ProductMarketLayout({
                         className={`flex flex-shrink-0 items-center gap-3 rounded-[9px] border px-3 py-2 text-left transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-colorPrimary/25 md:w-full ${
                           isMarketAppearance
                             ? isActive
-                              ? 'border-transparent bg-[#EEECFF] text-gray-800'
+                              ? 'border-transparent bg-[#F6F6F6] text-gray-800'
                               : 'border-transparent bg-transparent text-gray-600 hover:bg-white/55 hover:text-gray-800'
                             : isActive
-                              ? 'border-[#D8E1F1] bg-white text-gray-950 shadow-[0_4px_14px_rgba(31,42,68,0.06)]'
+                              ? 'border-[#D8E1F1] bg-white text-gray-950 shadow-[0_4px_14px_rgba(0,0,0,0.06)]'
                               : 'border-transparent bg-transparent text-gray-600 hover:border-[#E3E8F1] hover:bg-white/80 hover:text-gray-900'
                         }`}
                         key={category.id}
@@ -254,7 +254,7 @@ export function ProductMarketLayout({
           className={`min-w-0 overflow-hidden rounded-xl ${
             isMarketAppearance
               ? 'border border-[#E1E3EB] bg-white/[0.58]'
-              : 'border border-[#DDE4EF] bg-white/90 shadow-[0_8px_24px_rgba(31,42,68,0.05)] backdrop-blur-sm'
+              : 'border border-[#E5E5E5] bg-white/90 shadow-[0_8px_24px_rgba(0,0,0,0.05)] backdrop-blur-sm'
           }`}
         >
           <div
@@ -307,7 +307,7 @@ export function ProductMarketLayout({
                       ${
                         sortBy === option.value
                           ? isMarketAppearance
-                            ? 'bg-[#EEECFF] text-colorPrimary'
+                            ? 'bg-[#F6F6F6] text-colorPrimary'
                             : 'bg-colorPrimary text-white'
                           : isMarketAppearance
                             ? 'text-gray-500 hover:bg-white/65 hover:text-gray-700'
@@ -347,7 +347,7 @@ export function ProductMarketLayout({
                     <EmptyState
                       className={`col-span-full ${
                         isMarketAppearance
-                          ? 'min-h-[220px] w-full max-w-[720px] justify-self-center rounded-[12px] bg-[#FCFCFE] text-center'
+                          ? 'min-h-[220px] w-full max-w-[720px] justify-self-center rounded-[12px] bg-[#FDFDFD] text-center'
                           : ''
                       }`}
                       description={emptyLabel}

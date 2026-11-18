@@ -85,7 +85,7 @@ function ConsumerDetailPage() {
             aria-label={t('listTitle')}
             className="flex min-w-0 items-center gap-3 px-1 text-sm font-medium text-[#858B9A]"
           >
-            <Link className="transition-colors hover:text-[#625DE2]" to="/consumers">
+            <Link className="transition-colors hover:text-[#171717]" to="/consumers">
               {t('listTitle')}
             </Link>
             <span aria-hidden="true" className="text-[#B3B7C2]">

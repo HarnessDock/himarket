@@ -335,7 +335,7 @@ export function AuthConfig({ consumerId }: AuthConfigProps) {
           </code>
           <Button
             aria-label={t('auth.copyCredential')}
-            className="h-8 w-8 rounded-[7px] border-0 p-0 text-[#625DE2] shadow-none hover:!bg-[#EFEDFB] hover:!text-[#514BCB]"
+            className="h-8 w-8 rounded-[7px] border-0 p-0 text-[#171717] shadow-none hover:!bg-[#F4F4F4] hover:!text-[#0A0A0A]"
             icon={<CopyOutlined className="text-colorPrimary" />}
             onClick={() => handleCopyCredential(apiKey)}
             size="small"
@@ -380,7 +380,7 @@ export function AuthConfig({ consumerId }: AuthConfigProps) {
           </code>
           <Button
             aria-label={t('auth.copyCredential')}
-            className="h-8 w-8 rounded-[7px] border-0 p-0 text-[#625DE2] shadow-none hover:!bg-[#EFEDFB] hover:!text-[#514BCB]"
+            className="h-8 w-8 rounded-[7px] border-0 p-0 text-[#171717] shadow-none hover:!bg-[#F4F4F4] hover:!text-[#0A0A0A]"
             icon={<CopyOutlined className="text-colorPrimary" />}
             onClick={() => handleCopyCredential(ak)}
             size="small"
@@ -403,7 +403,7 @@ export function AuthConfig({ consumerId }: AuthConfigProps) {
           </code>
           <Button
             aria-label={t('auth.copyCredential')}
-            className="h-8 w-8 rounded-[7px] border-0 p-0 text-[#625DE2] shadow-none hover:!bg-[#EFEDFB] hover:!text-[#514BCB]"
+            className="h-8 w-8 rounded-[7px] border-0 p-0 text-[#171717] shadow-none hover:!bg-[#F4F4F4] hover:!text-[#0A0A0A]"
             icon={<CopyOutlined className="text-colorPrimary" />}
             onClick={() => handleCopyCredential(sk)}
             size="small"
@@ -457,7 +457,7 @@ export function AuthConfig({ consumerId }: AuthConfigProps) {
         {activeTab === 'API_KEY' && (
           <div>
             <div className="mb-4">
-              <div className="mb-4 flex flex-col gap-3 rounded-[10px] border border-[#E3E4EB] bg-[#F8F8FB]/70 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="mb-4 flex flex-col gap-3 rounded-[10px] border border-[#E3E4EB] bg-[#FAFAFA]/70 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-2">
                   <span className="text-sm font-medium text-[#596275]">
                     {t('auth.credentialSource')}
@@ -469,7 +469,7 @@ export function AuthConfig({ consumerId }: AuthConfigProps) {
                   </code>
                 </div>
                 <Button
-                  className="h-8 w-fit rounded-[7px] border-0 px-2.5 text-[#625DE2] shadow-none hover:!bg-[#EFEDFB] hover:!text-[#514BCB]"
+                  className="h-8 w-fit rounded-[7px] border-0 px-2.5 text-[#171717] shadow-none hover:!bg-[#F4F4F4] hover:!text-[#0A0A0A]"
                   icon={<EditOutlined />}
                   onClick={openSourceModal}
                   size="small"

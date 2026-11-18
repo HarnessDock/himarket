@@ -44,7 +44,7 @@ export function WelcomeView({ type }: WelcomeViewProps) {
                   <Paperclip aria-hidden="true" size={18} strokeWidth={1.8} />
                 </span>
               )}
-              <span className="flex h-8 items-center justify-center gap-1.5 rounded-[8px] bg-[#EFEDFB] px-2.5 text-[#6F69DF]">
+              <span className="flex h-8 items-center justify-center gap-1.5 rounded-[8px] bg-[#F4F4F4] px-2.5 text-[#171717]">
                 {isChatType ? (
                   <Paperclip aria-hidden="true" size={16} strokeWidth={1.8} />
                 ) : (
@@ -59,7 +59,7 @@ export function WelcomeView({ type }: WelcomeViewProps) {
                 <span className="truncate">{t(`${namespace}.loginHint`)}</span>
               </span>
             </div>
-            <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#D9DDF6] text-white">
+            <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[#E8E8E8] text-white">
               <Send aria-hidden="true" size={17} strokeWidth={1.8} />
             </span>
           </div>
@@ -67,14 +67,14 @@ export function WelcomeView({ type }: WelcomeViewProps) {
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5">
           <Button
-            className="h-10 rounded-[8px] border-0 bg-[#6863EB] px-5 text-sm font-medium shadow-none hover:!bg-[#5D58DE]"
+            className="h-10 rounded-[8px] border-0 bg-[#171717] px-5 text-sm font-medium shadow-none hover:!bg-[#171717]"
             onClick={() => login()}
             type="primary"
           >
             {t(`${namespace}.cta`)}
           </Button>
           <Button
-            className="h-10 rounded-[8px] border-[#DFE1E8] bg-white/45 px-5 text-sm font-medium text-[#555E6F] shadow-none hover:!border-[#CFCCE8] hover:!bg-white/65 hover:!text-[#4943C7]"
+            className="h-10 rounded-[8px] border-[#DFE1E8] bg-white/45 px-5 text-sm font-medium text-[#555E6F] shadow-none hover:!border-[#DADADA] hover:!bg-white/65 hover:!text-[#0A0A0A]"
             onClick={() => navigate('/register')}
           >
             {t('register')}

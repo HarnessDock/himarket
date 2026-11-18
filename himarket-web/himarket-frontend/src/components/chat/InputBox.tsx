@@ -235,7 +235,7 @@ export function InputBox(props: InputBoxProps) {
   return (
     <div
       aria-label={t('input.dropArea')}
-      className={`relative flex flex-col justify-center rounded-[16px] border bg-[#FAFBFD]/95 p-2 shadow-[0_10px_28px_rgba(55,68,94,0.065)] transition-all duration-200 focus-within:border-colorPrimary/20 focus-within:bg-[#FCFCFE] focus-within:shadow-[0_12px_30px_rgba(55,68,94,0.085)] ${
+      className={`relative flex flex-col justify-center rounded-[16px] border bg-[#FAFBFD]/95 p-2 shadow-[0_10px_28px_rgba(55,68,94,0.065)] transition-all duration-200 focus-within:border-colorPrimary/20 focus-within:bg-[#FDFDFD] focus-within:shadow-[0_12px_30px_rgba(55,68,94,0.085)] ${
         isDragging
           ? 'scale-[1.01] border-dashed border-colorPrimary ring-4 ring-colorPrimary/10'
           : 'border-transparent'

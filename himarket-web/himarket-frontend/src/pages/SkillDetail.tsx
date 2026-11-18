@@ -809,8 +809,8 @@ function SkillDetail() {
                         <button
                           className={`flex h-8 min-w-0 items-center gap-1.5 rounded-[8px] border px-2 text-xs font-medium transition-all ${
                             selectedIde === ide.value
-                              ? 'border-colorPrimary bg-colorPrimaryBg text-colorPrimary shadow-[0_4px_12px_rgba(99,102,241,0.12)]'
-                              : 'border-[#E3E9F3] bg-white text-gray-600 hover:border-[#C6D1E3] hover:bg-[#FAFBFF] hover:text-gray-900'
+                              ? 'border-colorPrimary bg-colorPrimaryBg text-colorPrimary shadow-[0_4px_12px_rgba(23,23,23,0.12)]'
+                              : 'border-[#E3E9F3] bg-white text-gray-600 hover:border-[#D4D4D4] hover:bg-[#FCFCFC] hover:text-gray-900'
                           }`}
                           key={ide.value}
                           onClick={() => {

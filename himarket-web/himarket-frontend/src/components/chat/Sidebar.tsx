@@ -421,7 +421,7 @@ export function Sidebar({
       <div className="p-4">
         <button
           className={`
-            group flex items-center rounded-[10px] border border-transparent bg-[#F5F6FA]
+            group flex items-center rounded-[10px] border border-transparent bg-[#F8F8F8]
             transition-all duration-200 ease-in-out
             overflow-hidden text-nowrap hover:bg-[#F0F2F7] active:scale-[0.98]
             ${isCollapsed ? 'h-10 w-10 justify-center p-0' : 'h-10 w-full justify-between px-3'}
@@ -449,7 +449,7 @@ export function Sidebar({
       {/* 功能列表 */}
       <div className="mx-4 mb-4">
         <div
-          className={`flex flex-col gap-1 rounded-[12px] bg-[#F5F6FA] ${isCollapsed ? 'p-1' : 'p-1.5'}`}
+          className={`flex flex-col gap-1 rounded-[12px] bg-[#F8F8F8] ${isCollapsed ? 'p-1' : 'p-1.5'}`}
         >
           <button
             className={`

@@ -61,8 +61,8 @@
 }
 
 .ant-pagination .ant-pagination-item-active {
-  background: #6366f1 !important;
-  border-color: #6366f1 !important;
+  background: #171717 !important;
+  border-color: #171717 !important;
 }
 
 .ant-pagination .ant-pagination-item-active a {
@@ -70,8 +70,8 @@
 }
 
 .ant-pagination .ant-pagination-item-active:hover {
-  background: #818cf8 !important;
-  border-color: #818cf8 !important;
+  background: #404040 !important;
+  border-color: #404040 !important;
 }
 
 .ant-pagination .ant-pagination-item-active:hover a {

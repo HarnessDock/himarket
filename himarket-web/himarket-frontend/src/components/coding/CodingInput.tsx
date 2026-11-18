@@ -471,8 +471,8 @@ export function CodingInput({
               {toolbarExtra}
             </div>
             <button
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#6F69E8] text-white
-                         transition-colors hover:bg-[#625DDA] disabled:bg-[#D9DDF6] disabled:cursor-not-allowed"
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-[#171717] text-white
+                         transition-colors hover:bg-[#171717] disabled:bg-[#E8E8E8] disabled:cursor-not-allowed"
               disabled={!canSend}
               onClick={handleSend}
             >

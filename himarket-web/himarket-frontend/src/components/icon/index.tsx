@@ -681,7 +681,7 @@ export const File = ({ className }: { className?: string }) => {
             fillOpacity="0"
             rx="2"
             ry="2"
-            stroke="#6366F1"
+            stroke="#171717"
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeOpacity="1"

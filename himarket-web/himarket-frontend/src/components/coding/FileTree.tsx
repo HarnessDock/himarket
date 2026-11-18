@@ -56,7 +56,7 @@ function FileIcon({ name }: { name: string }) {
         <FileMarkdownFilled className={iconClass} style={{ ...iconStyle, color: '#1a72bd' }} />
       );
     case 'json':
-      return <SettingFilled className={iconClass} style={{ ...iconStyle, color: '#7568b8' }} />;
+      return <SettingFilled className={iconClass} style={{ ...iconStyle, color: '#0A0A0A' }} />;
     case 'yaml':
     case 'yml':
       return <SettingFilled className={iconClass} style={{ ...iconStyle, color: '#c88a0a' }} />;
@@ -111,7 +111,7 @@ function FileIcon({ name }: { name: string }) {
     case 'webp':
     case 'svg':
     case 'ico':
-      return <FileImageFilled className={iconClass} style={{ ...iconStyle, color: '#5848b0' }} />;
+      return <FileImageFilled className={iconClass} style={{ ...iconStyle, color: '#0A0A0A' }} />;
     case 'txt':
     case 'log':
     case 'csv':

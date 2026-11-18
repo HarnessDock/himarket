@@ -168,7 +168,7 @@ function ConsumersPage() {
       render: (name: string, record) => (
         <div className="flex min-w-0 items-center gap-2.5">
           <Link
-            className="min-w-0 truncate text-sm font-semibold text-[#625DE2] no-underline transition-colors hover:text-[#514BCB] hover:no-underline focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-colorPrimary/25"
+            className="min-w-0 truncate text-sm font-semibold text-[#171717] no-underline transition-colors hover:text-[#0A0A0A] hover:no-underline focus-visible:rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-colorPrimary/25"
             title={name}
             to={`/consumers/${record.consumerId}`}
           >
@@ -176,7 +176,7 @@ function ConsumersPage() {
           </Link>
           {record.consumerId === primaryConsumer?.consumerId && (
             <button
-              className="inline-flex h-7 flex-shrink-0 cursor-pointer items-center gap-1.5 rounded-[7px] bg-[#EFEDFB] px-2.5 text-xs font-medium text-[#655F83] transition-colors hover:bg-[#E8E5F8] hover:text-[#514A75] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-colorPrimary/25"
+              className="inline-flex h-7 flex-shrink-0 cursor-pointer items-center gap-1.5 rounded-[7px] bg-[#F4F4F4] px-2.5 text-xs font-medium text-[#655F83] transition-colors hover:bg-[#EEEEEE] hover:text-[#514A75] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-colorPrimary/25"
               onClick={() => {
                 setShowModifyPrimaryConsumerModal(true);
                 setSelectedPrimaryConsumer(primaryConsumer?.consumerId || '');

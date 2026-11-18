@@ -48,7 +48,7 @@ export function PermissionDialog({ onRespond, permission }: PermissionDialogProp
         )}
 
         {toolCall.rawInput?.command !== undefined && toolCall.rawInput?.command !== null && (
-          <div className="rounded-[8px] bg-[#F6F7FA] px-3 py-2.5">
+          <div className="rounded-[8px] bg-[#F8F8F8] px-3 py-2.5">
             <div className="mb-1 text-xs font-medium text-gray-500">{t('permission.command')}</div>
             <code className="block max-h-40 overflow-auto whitespace-pre-wrap break-all font-mono text-xs leading-5 text-gray-700">
               {String(toolCall.rawInput.command)}

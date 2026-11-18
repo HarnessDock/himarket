@@ -341,7 +341,7 @@ export function ChatArea(props: ChatAreaProps) {
             <div className="mb-9 text-center">
               <h1 className="mb-2 text-[26px] font-medium leading-tight text-gray-800">
                 <span className="text-gray-700">{t('area.emptyTitle')}</span>{' '}
-                <span className="hi-chat-brand-glow font-semibold text-[#818CF8]">HiChat</span>
+                <span className="hi-chat-brand-glow font-semibold text-[#404040]">HiChat</span>
               </h1>
             </div>
 

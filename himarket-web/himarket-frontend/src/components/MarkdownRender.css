@@ -164,9 +164,9 @@
 
 .himarket-markdown-chat.markdown-body blockquote {
   margin: 0.85rem 0;
-  border-left: 3px solid #8b8cf6;
+  border-left: 3px solid #404040;
   border-radius: 10px;
-  background: #f7f8ff;
+  background: #fbfbfb;
   color: #526071;
   padding: 0.75rem 0.9rem;
   font-style: normal;
@@ -199,7 +199,7 @@
 }
 
 .himarket-markdown-chat.markdown-body a {
-  color: #4f5ff7;
+  color: #171717;
   text-decoration: none;
   font-weight: 500;
 }
@@ -287,7 +287,7 @@
 }
 
 .himarket-markdown-product-description.markdown-body a {
-  color: #6267e9;
+  color: #171717;
   text-decoration: none;
 }
 
