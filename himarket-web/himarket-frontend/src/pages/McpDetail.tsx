@@ -173,6 +173,58 @@ function protocolFromTabKey(key: string): McpProtocolValue {
   return key === 'http' ? 'streamable-http' : (key as McpProtocolValue);
 }
 
+type ToolArg = {
+  name: string;
+  description: string;
+  type: string;
+  required: boolean;
+  position: string;
+  default?: string;
+  enum?: string[];
+};
+type ParsedTool = { name: string; description: string; args?: ToolArg[] };
+type SchemaProp = {
+  type?: string | string[];
+  description?: string;
+  default?: unknown;
+  enum?: unknown[];
+};
+type RawTool = {
+  name: string;
+  description?: string;
+  args?: ToolArg[];
+  inputSchema?: { properties?: Record<string, SchemaProp>; required?: string[] };
+};
+
+/**
+ * 工具清单两种写法都认：Higress 的 YAML（tools[].args），或 MCP tools/list 的 JSON（tools[].inputSchema）。
+ * JSON 也是合法 YAML，统一用 yaml.load 解析。
+ */
+function toolsFromConfig(config: string): ParsedTool[] {
+  let parsed: { tools?: RawTool[] } | null = null;
+  try {
+    parsed = yaml.load(config) as { tools?: RawTool[] } | null;
+  } catch (error) {
+    console.warn('解析工具清单失败:', error);
+    return [];
+  }
+  return (parsed?.tools ?? []).map((tool) => ({
+    args:
+      tool.args ??
+      Object.entries(tool.inputSchema?.properties ?? {}).map(([name, prop]) => ({
+        default: prop.default === undefined ? undefined : String(prop.default),
+        description: prop.description ?? '',
+        enum: prop.enum?.map(String),
+        name,
+        position: 'body',
+        required: tool.inputSchema?.required?.includes(name) ?? false,
+        type: Array.isArray(prop.type) ? prop.type.join(' | ') : (prop.type ?? 'any'),
+      })),
+    description: tool.description ?? '',
+    name: tool.name,
+  }));
+}
+
 function McpDetail() {
   const { mcpProductId } = useParams();
   const { t } = useTranslation('mcpDetail');
@@ -180,67 +232,12 @@ function McpDetail() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<IProductDetail>();
   const [mcpConfig, setMcpConfig] = useState<IMCPConfig>();
-  const [parsedTools, setParsedTools] = useState<
-    Array<{
-      name: string;
-      description: string;
-      args?: Array<{
-        name: string;
-        description: string;
-        type: string;
-        required: boolean;
-        position: string;
-        default?: string;
-        enum?: string[];
-      }>;
-    }>
-  >([]);
+  const [parsedTools, setParsedTools] = useState<ParsedTool[]>([]);
   const [connectionDomainIndex, setConnectionDomainIndex] = useState<number>(0);
   const [connectionProtocol, setConnectionProtocol] = useState<McpProtocolValue>('streamable-http');
   const [configDomainIndex, setConfigDomainIndex] = useState<number>(0);
   const [configProtocol, setConfigProtocol] = useState<McpProtocolValue>('streamable-http');
   const [rightPanelTab, setRightPanelTab] = useState<'connection' | 'config'>('connection');
-
-  // 解析YAML配置的函数
-  const parseYamlConfig = (
-    yamlString: string,
-  ): {
-    tools?: Array<{
-      name: string;
-      description: string;
-      args?: Array<{
-        name: string;
-        description: string;
-        type: string;
-        required: boolean;
-        position: string;
-        default?: string;
-        enum?: string[];
-      }>;
-    }>;
-  } | null => {
-    try {
-      const parsed = yaml.load(yamlString) as {
-        tools?: Array<{
-          name: string;
-          description: string;
-          args?: Array<{
-            name: string;
-            description: string;
-            type: string;
-            required: boolean;
-            position: string;
-            default?: string;
-            enum?: string[];
-          }>;
-        }>;
-      };
-      return parsed;
-    } catch (error) {
-      console.warn('解析YAML配置失败:', error);
-      return null;
-    }
-  };
 
   useEffect(() => {
     const fetchDetail = async () => {
@@ -263,10 +260,18 @@ function McpDetail() {
 
               // 解析tools配置
               if (mcpProduct.mcpConfig.tools) {
-                const parsedConfig = parseYamlConfig(mcpProduct.mcpConfig.tools);
-                if (parsedConfig && parsedConfig.tools) {
-                  setParsedTools(parsedConfig.tools);
-                }
+                setParsedTools(toolsFromConfig(mcpProduct.mcpConfig.tools));
+              }
+            }
+
+            // 关联到网关的 MCP（如 Higress 上的原生 MCP 服务）mcpConfig 里没有工具清单，改用门户公开的 MCP 元数据
+            if (!mcpProduct.mcpConfig?.tools) {
+              const meta = await APIs.getMcpMetaPublic([mcpProductId]).catch(() => undefined);
+              const toolsConfig = meta?.data?.find(
+                (m) => m.productId === mcpProductId,
+              )?.toolsConfig;
+              if (toolsConfig) {
+                setParsedTools(toolsFromConfig(toolsConfig));
               }
             }
           }
@@ -445,7 +450,9 @@ function McpDetail() {
                               )}
 
                               {(!tool.args || tool.args.length === 0) && (
-                                <div className="text-sm text-gray-500">No parameters required</div>
+                                <div className="text-sm text-gray-500">
+                                  {t('tools.noParameters')}
+                                </div>
                               )}
                             </div>
                           ),

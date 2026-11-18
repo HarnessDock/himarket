@@ -8,7 +8,9 @@ import request, { type RespI } from '../request';
 
 export interface IIdpProvider {
   provider: string;
-  name: string;
+  /** 后端 IdpResult 返回的显示名（门户 OIDC 配置的 name） */
+  displayName?: string;
+  name?: string;
 }
 
 export interface IAuthResult {

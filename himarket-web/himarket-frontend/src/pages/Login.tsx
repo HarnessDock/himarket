@@ -167,7 +167,9 @@ const Login: React.FC = () => {
                       key={provider.provider}
                       onClick={() => handleOidcLogin(provider.provider)}
                     >
-                      {t('loginWithProvider', { provider: provider.name || provider.provider })}
+                      {t('loginWithProvider', {
+                        provider: provider.displayName || provider.name || provider.provider,
+                      })}
                     </Button>
                   ))}
             </div>

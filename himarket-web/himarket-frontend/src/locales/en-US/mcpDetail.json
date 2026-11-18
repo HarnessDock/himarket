@@ -19,7 +19,8 @@
   },
   "tools": {
     "inputParameters": "Input parameters",
-    "inputPlaceholder": "Enter {{name}}"
+    "inputPlaceholder": "Enter {{name}}",
+    "noParameters": "No parameters required"
   },
   "connection": {
     "infoTab": "Connection",

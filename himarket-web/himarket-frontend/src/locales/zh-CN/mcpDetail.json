@@ -19,7 +19,8 @@
   },
   "tools": {
     "inputParameters": "输入参数",
-    "inputPlaceholder": "请输入 {{name}}"
+    "inputPlaceholder": "请输入 {{name}}",
+    "noParameters": "无需参数"
   },
   "connection": {
     "infoTab": "连接信息",

@@ -91,6 +91,20 @@ export function getProduct(params: { id: string }) {
   return request.get<RespI<IProductDetail>, RespI<IProductDetail>>('/products/' + params.id);
 }
 
+/** 门户公开的 MCP 元数据；toolsConfig 是工具清单（MCP tools/list 的 JSON，或 Higress 的 YAML） */
+export interface IMcpMetaPublic {
+  productId: string;
+  mcpName?: string;
+  toolsConfig?: string | null;
+}
+
+export function getMcpMetaPublic(productIds: string[]) {
+  return request.get<RespI<IMcpMetaPublic[]>, RespI<IMcpMetaPublic[]>>(
+    '/mcp-servers/meta/batch/public',
+    { params: { productIds: productIds.join(',') } },
+  );
+}
+
 // MCP 工具列表相关类型
 export interface IMcpTool {
   name: string;
